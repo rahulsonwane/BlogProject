@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(70, 63, 63);
+    color: rgb(43, 41, 38);
+
+}
+
+.form-control{
+    background-color: rgb(196, 171, 171);
+    
+}
+
+.btn{
+    margin-top: 15px;
+}

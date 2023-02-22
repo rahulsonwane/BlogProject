@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static '/blog/css/style.css'%}">
+    {% comment %} <link rel="stylesheet" href="static/blog/css/style.css"> {% endcomment %}
+    <title>Document</title>
+</head>
+
+<div class="col-sm-10">
+    <h3 class="text-white my-5"> About Page</h3>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas obcaecati perspiciatis officia temporibus eveniet ea et ex ducimus assumenda minus.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae repudiandae architecto ullam exercitationem quia magnam enim autem, et minima sit, explicabo animi? Maxime ducimus optio sed molestiae sunt saepe nobis.</p>
+    
+</div> 
+
+{% endblock content %}
