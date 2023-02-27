@@ -6,28 +6,32 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          {% comment %} Dnynamic path change the background color red {% endcomment %}
+          <li class=" {% if request.path == '/' %} nav-item active {% endif %}">
+            <a class="nav-link " aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item">
+          <li class=" {% if request.path == '/about/' %} active {% endif %}">
             <a class="nav-link" href="{%url 'about'%}">About</a>
           </li>
-          <li class="nav-item">
+          <li class=" {% if request.path == '/contact' %} nav-item active {% endif %}">
             <a class="nav-link" href="{%url 'contact'%}">Contact</a>
           </li>
           {% if request.user.is_authenticated %}
-            <li class="nav-item">
+            <li class=" {% if request.path == '/dashboard' %} nav-item active {% endif %}">
               <a class="nav-link" href="{%url 'dashboard'%}">Dashboard</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{%url 'logout'%}">Logout</a>
             </li>
           {%else%}
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'signup'%}">Signup</a>
+          {% url 'signup' as url%}   
+            <li class="{% if request.path == url %} active {%endif%}">
+              <a class="nav-link" href="{{url}}">Signup</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'login'%}">Login</a>
+            {% url 'login' as url%} 
+            <li class="{% if request.path == url %} active {%endif%}">
+              <a class="nav-link" href="{{url}}">Login</a>
             </li>
           {% endif %}
         </ul>
